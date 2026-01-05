@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <link href="Common/Match.css" rel="stylesheet">
+  <title>A Little Match Girl!</title>
+</head>
+
+<body>
+  <div class="A_Little_Match_GirlDiv">
+    <div id="spacer">　</div>
+    <p class="sentenceLine"></p>
+    <p class="sentenceLine"></p>
+    <p class="sentenceLine"></p>
+    <p class="sentenceLine"></p>
+    <p class="sentenceLine"></p>
+    <p class="sentenceLine"></p>
+    <p class="sentenceLine"></p>
+    <p class="sentenceLine"></p>
+    <img id="pictureA_Little_Match_Girl" src="Common/A_Little_Match_Girl.png"
+      alt="タイトル画像。画像中央にはマッチ売りの少女、背景には雪の降る夜空が描かれている。">
+    <img id="picturePlayAudio" src="Common/PlayAudio.png" alt="'Play Audio?'と書かれている。下のボタンで音声の有無を選べる。">
+    <img id="pictureSelectLanguage" src="Common/SelectLanguage.png" alt="'Select Language'と書かれている。日本語と英語が選べる">
+    <img id="pictureEnglishPrologue" src="Common/EnglishPrologue.png" alt="'EnglishButton'を選んだ時に表示されるゲーム内物語のプロローグ（英語）。">
+    <img id="pictureSelectMatch" src="Common/SelectMatch.png" alt="'Which Match You Strike?'と書かれている。下のボタンで3種類のマッチが選べる">
+    <img id="pictureSelectMatchJapanese" src="Common/SelectMatchJapanese.png"
+      alt="'マッチを選んでください。'と書かれている。下のボタンで3種類のマッチが選べる">
+    <img id="pictureGameClear" src="Common/GameClear.png"
+      alt="ゲームをクリアした時に表示される画像。'MAY GOD BLESS YOU!'THANK YOU FOR PLAYING!'と書かれている。">
+    <img id="pictureGameOver" src="Common/GameOver.png" alt="'GAME OVER'と書かれている。背景は悲しげな顔をしたマッチ売りの少女。">
+    <button id="playAudioButton">Play Audio</button>
+    <button id="playAsMuteModeButton">MuteMode</button>
+    <button id="englishButton">English</button>
+    <button id="japaneseButton">日本語</button>
+    <button id="prologueNextButton">Next</button>
+    <button id="matchIgnorantButton">Match of Darkness</button>
+    <button id="matchUnjustButton">Match of Crimson</button>
+    <button id="matchArrogantButton">Match of Stardust</button>
+    <button id="storyNextButton">Next</button>
+    <button id="homeButton">Tap And Return!</button><br>
+  </div>
+
+  <div class="IgnorantDiv">
+    <table id="boardIgnorant">
+      <tr>
+        <td><img src="Common/dummy.png" alt="スペーサーとして配置。同様の物が数カ所配置されているが、画像としての意味は無い。"></td>
+      </tr>
+      <tr>
+        <td><img src="Common/dummy.png"></td>
+      </tr>
+      <tr id="damageScreenIgnorant"></tr>
+      <tr>
+        <td>1</td>
+        <td>2
+          <div id="resultDivIgnorant"></div>
+        </td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td><img src="Common/dummy.png"></td>
+      </tr>
+      <tr></tr>
+      <tr id="sentence"></tr>
+      <tr>
+        <td><img src="Ignorant/black2.png" alt="カード背面画像。ゲームを開始するとここにランダムな数字が表示される。同様のカードがこの列に13枚並んでいる。"
+            class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classComCardsIgnorant"></td>
+        <td><img src="Ignorant/black.png" class="classComCardsIgnorant"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <img id="IgnorantImg" src="Ignorant/Ignorant.png" alt="少し怒ったような顔をしている無表情の女性。果実を販売する行商人。">
+        </td>
+        <td></td>
+        <td>
+          <div id="myLifeIgnorant"></div>
+        </td>
+        <td></td>
+        <td id="holderIgnorant"></td>
+        <td>
+          <div id="startDivIgnorant">
+            <p id="pressStartIgnorant">Press<br>Start</p>
+            <button id="startButtonIgnorant">Start</button>
+          </div>
+          <button id="resetButtonIgnorant">Reset</button>
+        </td>
+        <td></td>
+        <td>
+          <p>PerfectHit:</p>
+          <p>SerialHit:</p>
+          <p>avg. </p>
+          <p>Time </p>
+        </td>
+        <td>
+          <p>　</p>
+          <p>　</p>
+          <p id="averageTimeIgnorant">00.00sec</p>
+          <p id="timeCountIgnorant">00.00sec</p>
+        </td>
+        <td>
+          <p id="perfectHitIgnorant">0</p>
+          <p id="serialHitIgnorant">0</p>
+          <p>　</p>
+          <p>　</p>
+        </td>
+        <td>
+          <div id="comLifeIgnorant"></div>
+          <p class="previousTimeIgnorant">00.00sec</p>
+          <p class="previousTimeIgnorant">00.00sec</p>
+          <p class="previousTimeIgnorant">00.00sec</p>
+          <p class="previousTimeIgnorant">00.00sec</p>
+          <div id="totalCountIgnorant"></div>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><img src="Ignorant/black2.png" alt="カード背面画像。ゲーム開始後、自分の選んだ数字がここに表示される。同様のカードがこの列に13枚並んでいる。"
+            class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black2.png" class="classMyCardsIgnorant"></td>
+        <td><img src="Ignorant/black.png" class="classMyCardsIgnorant"></td>
+      </tr>
+      <tr>
+        <td><img src="Ignorant/black2.png" alt="カードの背面画像。"></td>
+        <td class="myNumberCards"><img src="Ignorant/0.png" alt="「0」のカード"></td>
+        <td class="myNumberCards"><img src="Ignorant/1.png" alt="「1」のカード"></td>
+        <td class="myNumberCards"><img src="Ignorant/2.png" alt="「2」のカード"></td>
+        <td class="myNumberCards"><img src="Ignorant/3.png" alt="「3」のカード"></td>
+        <td class="myNumberCards"><img src="Ignorant/4.png" alt="「4」のカード"></td>
+        <td class="myNumberCards"><img src="Ignorant/5.png" alt="「5」のカード"></td>
+        <td class="myNumberCards"><img src="Ignorant/6.png" alt="「6」のカード"></td>
+        <td class="myNumberCards"><img src="Ignorant/7.png" alt="「7」のカード"></td>
+        <td class="myNumberCards"><img src="Ignorant/8.png" alt="「8」のカード"></td>
+        <td class="myNumberCards"><img src="Ignorant/9.png" alt="「9」のカード"></td>
+        <td class="myNumberCards"><img src="Ignorant/0.png"
+            alt="「0」のカード。13枚配置のため右から数えても左から数えても7枚目に「5」がくるように左端と右端で「0」を重複させている"></td>
+        <td><img src="Ignorant/black.png" alt="カードの背面画像。"></td>
+      </tr>
+    </table>
+  </div>
+  <div class=UnjustDiv>
+    <table id="boardUnjust">
+      <tr id="damageScreenUnjust"></tr>
+      <tr>
+        <td>1</td>
+        <td>2
+          <div id="resultDivUnjust"></div>
+        </td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>
+          <img src="Common/dummy.png">
+        </td>
+      </tr>
+      <tr>
+        <td><img
+            alt="何の画像も配置されていないが、このディビジョン（ゲーム部）が呼び出されると同時にカード背面画像が表示される。その後、ゲームを開始するとここにランダムなマーク（4種類）と数字が表示される。同様のカードが13枚*4列で52枚並んでいる。"
+            class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+      </tr>
+      <tr>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+      </tr>
+      <tr>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+      </tr>
+      <tr>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+        <td><img class="classComCardsUnjust"></td>
+      </tr>
+      <tr>
+        <td id="holderUnjust">
+          <button id="openButton">Open</button><br>
+          <button id="resetButtonUnjust">Reset</button><br>
+        </td>
+        <td></td>
+        <td>
+          <img id="UnjustImg" src="Unjust/Unjust.png" alt="仮面を被り、ウォーハンマーをかついだ屈強な戦士。軍人。">
+        </td>
+        <td>
+          <div id="myLifeUnjust"></div>
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          <div id="startDivUnjust">
+            <p id="pressStartUnjust">Press<br>Start</p>
+            <button id="startButtonUnjust">Start</button>
+          </div>
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          <p>PerfectHit:</p>
+          <p>SerialHit:</p>
+          <p>Time: </p>
+        </td>
+        <td></td>
+        <td>
+          <p id="perfectHitUnjust">0</p>
+          <p id="serialHitUnjust">0</p>
+          <p id="timeCountUnjust">000.00sec</p>
+          <div id="comLifeUnjust"></div>
+          <div id="totalCountUnjust"></div>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><img
+            alt="何の画像も配置されていないが、このディビジョン（ゲーム部）が呼び出されると同時にカード背面画像が表示される。その後、ゲームを開始するとスペードのAからハートのKまで52枚のカードが13*4列で表示される。"
+            class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+      </tr>
+      <tr>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+      </tr>
+      <tr>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+      </tr>
+      <tr>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+        <td><img class="classMyCardsUnjust"></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+    </table>
+  </div>
+  <div class="ArrogantDiv">
+    <table id="boardArrogant">
+      <tr>
+      <tr id="damageScreenArrogant"></tr>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2
+          <div id="resultDivArrogant"></div>
+        </td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td><img src="Common/dummy.png"></td>
+      </tr>
+      <tr>
+        <td>
+          <pre id="idCorrectIncorrect"></pre>
+          <img
+            alt="何の画像も配置されていないが、このディビジョン（カレンダー計算ゲーム）が呼び出されると同時にカード背面画像が表示される。その後、ゲームを開始するとランダムな数字が表示される。この列には同様のカードが12枚並んでおり、12桁の西暦年月日の「年」を表示する。"
+            class="classComYearCards">
+        </td>
+        <td><img class="classComYearCards"></td>
+        <td><img class="classComYearCards"></td>
+        <td><img class="classComYearCards"></td>
+        <td><img class="classComYearCards"></td>
+        <td><img class="classComYearCards"></td>
+        <td><img class="classComYearCards"></td>
+        <td><img class="classComYearCards"></td>
+        <td><img class="classComYearCards"></td>
+        <td><img class="classComYearCards"></td>
+        <td><img class="classComYearCards"></td>
+        <td><img class="classComYearCards"></td>
+        <td><img alt="「Y」と書かれたカードの画像。この列が年（Year）の表示である事を意味する。" src="Arrogant/year.png"></td>
+      </tr>
+      <tr>
+        <td><img alt="何の画像も配置されていないが、このディビジョン（カレンダー計算ゲーム）が呼び出されると同時にカード背面画像が表示される。" src="Arrogant/answer2.png"></td>
+        <td><img alt="何の画像も配置されていないが、このディビジョン（カレンダー計算ゲーム）が呼び出されると同時にカード背面画像が表示される。ゲーム開始後、答えを選ぶと表示されている年月日に対応する曜日が表示される。"
+            id="idComDayCard"></td>
+        <!--透過させない-->
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img
+            alt="何の画像も配置されていないが、このディビジョン（カレンダー計算ゲーム）が呼び出されると同時にカード背面画像が表示される。その後、ゲームを開始するとランダムな数字が表示される。次のカードも同様。次のカードと2枚合わせて西暦年月日の「月」を表示する。"
+            class="classComMonthCards"></td>
+        <td><img class="classComMonthCards"></td>
+        <td><img src="Arrogant/month.png"></td>
+      </tr>
+      <tr>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img src="Common/red2.png"></td>
+        <td><img
+            alt="何の画像も配置されていないが、このディビジョン（カレンダー計算ゲーム）が呼び出されると同時にカード背面画像が表示される。その後、ゲームを開始するとランダムな数字が表示される。次のカードも同様。次のカードと2枚合わせて西暦年月日の「日」を表示する"
+            class="classComDateCards"></td>
+        <td><img class="classComDateCards"></td>
+        <td><img src="Arrogant/date.png"></td>
+      </tr>
+      <tr>
+        <td id="idAdjusterAnswerWait">
+          <div id="adjusterDiv">Month<br>Adjuster
+            <button class="adjusterButton">+3</button>
+            <button class="adjusterButton">+2</button>
+            <button class="adjusterButton">+1</button>
+            <button class="adjusterButton">0</button>
+            <button class="adjusterButton">-1</button>
+            <button class="adjusterButton">-2</button>
+            <button class="adjusterButton">-3</button>
+          </div>
+          <div id="answerWaitDiv">Answer<br>ShowTime
+            <button class="answerWait">10sec</button>
+            <button class="answerWait">5sec</button>
+            <button class="answerWait">3sec</button>
+            <button class="answerWait">1sec</button>
+            <button class="answerWait">0.5sec</button>
+            <button class="answerWait">0.3sec</button>
+            <button class="answerWait">0.1sec</button>
+          </div>
+        </td>
+        <td>
+          <img id="ArrogantImg" src="Arrogant/Arrogant.png" alt="眼鏡をかけた女性参謀。空も飛べるが眼鏡を落とすと困るのでので陸軍。">
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          <div id="myLifeArrogant"></div>
+        </td>
+        <td id="holderArrogant"></td>
+        <td>
+          <div id="startDivArrogant">
+            <p id="pressStartArrogant">Press<br>Start</p>
+            <button id="startButtonArrogant">Start</button>
+          </div>
+          <button id="resetButtonArrogant">Reset</button>
+        </td>
+        <td></td>
+        <td>
+          <p>PerfectHit:</p>
+          <p>SerialHit:</p>
+          <p>avg.:</p>
+          <p>Time:</p>
+        </td>
+        <td>
+          <p>　</p>
+          <p>　</p>
+          <p id="averageTimeArrogant">00.00sec</p>
+          <p id="timeCountArrogant">00.00sec</p>
+        </td>
+        <td>
+          <p id="perfectHitArrogant">0</p>
+          <p id="serialHitArrogant">0</p>
+          <p>　</p>
+          <p>　</p>
+        </td>
+        <td>
+          <div id="comLifeArrogant"></div>
+          <p class="previousTimeArrogant">00.00sec</p>
+          <p class="previousTimeArrogant">00.00sec</p>
+          <p class="previousTimeArrogant">00.00sec</p>
+          <p class="previousTimeArrogant">00.00sec</p>
+          <div id="totalCountArrogant"></div>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><img src="Common/blue2.png"></td>
+        <td><img src="Arrogant/century2.png"></td>
+        <td><img src="Common/blue2.png"></td>
+        <td class="classAttackCentury"><img class="classMyCenturyCards"></td>
+        <td class="classAttackCentury"><img class="classMyCenturyCards"></td>
+        <td class="classAttackCentury"><img class="classMyCenturyCards"></td>
+        <td class="classAttackCentury"><img class="classMyCenturyCards"></td>
+        <td class="classAttackCentury"><img class="classMyCenturyCards"></td>
+        <td class="classAttackCentury"><img class="classMyCenturyCards"></td>
+        <td class="classAttackCentury"><img class="classMyCenturyCards"></td>
+        <td><img src="Common/blue2.png"></td>
+        <td><img src="Arrogant/century2.png"></td>
+        <td><img src="Common/blue.png"></td>
+      </tr>
+      <tr>
+        <td><img src="Common/blue2.png"></td>
+        <td><img src="Arrogant/year2.png"></td>
+        <td><img src="Common/blue2.png"></td>
+        <td class="classAttackYear"><img class="classMyYearCards"></td>
+        <td class="classAttackYear"><img class="classMyYearCards"></td>
+        <td class="classAttackYear"><img class="classMyYearCards"></td>
+        <td class="classAttackYear"><img class="classMyYearCards"></td>
+        <td class="classAttackYear"><img class="classMyYearCards"></td>
+        <td class="classAttackYear"><img class="classMyYearCards"></td>
+        <td class="classAttackYear"><img class="classMyYearCards"></td>
+        <td><img src="Common/blue2.png"></td>
+        <td><img src="Arrogant/year2.png"></td>
+        <td><img src="Common/blue.png"></td>
+      </tr>
+      <tr>
+        <td><img src="Common/blue2.png"></td>
+        <td><img src="Arrogant/month2.png"></td>
+        <td><img src="Common/blue2.png"></td>
+        <td class="classAttackMonth"><img class="classMyMonthCards"></td>
+        <td class="classAttackMonth"><img class="classMyMonthCards"></td>
+        <td class="classAttackMonth"><img class="classMyMonthCards"></td>
+        <td class="classAttackMonth"><img class="classMyMonthCards"></td>
+        <td class="classAttackMonth"><img class="classMyMonthCards"></td>
+        <td class="classAttackMonth"><img class="classMyMonthCards"></td>
+        <td class="classAttackMonth"><img class="classMyMonthCards"></td>
+        <td><img src="Common/blue2.png"></td>
+        <td><img src="Arrogant/month2.png"></td>
+        <td><img src="Common/blue.png"></td>
+      </tr>
+      <tr>
+        <td><img src="Common/blue2.png"></td>
+        <td><img src="Arrogant/date2.png"></td>
+        <td><img src="Common/blue2.png"></td>
+        <td class="classAttackDate"><img class="classMyDateCards"></td>
+        <td class="classAttackDate"><img class="classMyDateCards"></td>
+        <td class="classAttackDate"><img class="classMyDateCards"></td>
+        <td class="classAttackDate"><img class="classMyDateCards"></td>
+        <td class="classAttackDate"><img class="classMyDateCards"></td>
+        <td class="classAttackDate"><img class="classMyDateCards"></td>
+        <td class="classAttackDate"><img class="classMyDateCards"></td>
+        <td><img src="Common/blue2.png"></td>
+        <td><img src="Arrogant/date2.png"></td>
+        <td><img src="Common/blue.png"></td>
+      </tr>
+      <tr>
+        <td onclick="attackIntercalary(true)"><img id="idIntercalaryCard"></td>
+        <td><img src="Arrogant/submit2.png"></td>
+        <td><img src="Common/blue2.png"></td>
+        <td class="classAttackDay"><img class="classMyDayCards"></td>
+        <td class="classAttackDay"><img class="classMyDayCards"></td>
+        <td class="classAttackDay"><img class="classMyDayCards"></td>
+        <td class="classAttackDay"><img class="classMyDayCards"></td>
+        <td class="classAttackDay"><img class="classMyDayCards"></td>
+        <td class="classAttackDay"><img class="classMyDayCards"></td>
+        <td class="classAttackDay"><img class="classMyDayCards"></td>
+        <td><img src="Common/blue2.png"></td>
+        <td><img src="Arrogant/submit2.png"></td>
+        <td><img src="Common/blue.png"></td>
+      </tr>
+      <tr>
+        <td class="classMyDayCards"></td>
+        <!--calendatAttack(7) === 時間切れ用--->
+        <td></td>
+        <td></td>
+        <td>Sun</td>
+        <td>Mon</td>
+        <td>Tue</td>
+        <td>Wed</td>
+        <td>Thu</td>
+        <td>Fri</td>
+        <td>Sat</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="ResetDialogDiv">
+    <p>リセットしますか？</p>
+    <button id="resumeBattleButton">このまま続行する</button>
+    <button id="resetBattleButton">リセットする</button>
+    <button id="loseButton">戦いを放棄する</button>
+    <button id="returnTitleButton">タイトルに戻る</button>
+  </div>
+
+  <script src="Common/Match.js"></script>
+
+</body>
+
+</html>

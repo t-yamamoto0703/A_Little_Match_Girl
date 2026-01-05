@@ -1,0 +1,354 @@
+@charset "utf-8";
+
+body {
+  position: absolute;
+  background-color: #000000ff;
+  color: #ffffffff;
+  text-align: center;
+  font-size: 20px;
+  width: 950px;
+}
+
+button {
+  position: absolute;
+  background-color: #00ff00ff;
+  border: solid;
+  color: #000000ff;
+  font-size: 32px;
+  height: 50px;
+  width: 300px;
+  left: 250px;
+  border-radius: 8px;
+}
+
+td {
+  position: relative;
+  max-width: 52px;
+}
+
+/*basicDivisions*/
+.A_Little_Match_GirlDiv {
+  display: block;
+}
+
+.ArrogantDiv {
+  display: none;
+}
+
+.IgnorantDiv {
+  display: none;
+}
+
+.UnjustDiv {
+  display: none;
+}
+
+/*Pictures*/
+#pictureA_Little_Match_Girl {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 100px;
+}
+
+#picturePlayAudio,
+#pictureSelectLanguage,
+#pictureEnglishPrologue,
+#pictureSelectMatch,
+#pictureSelectMatchJapanese {
+  position: absolute;
+  top: 620px;
+  left: 0px;
+  z-index: 1;
+  display: none;
+}
+
+#pictureGameClear,
+#pictureGameOver {
+  position: absolute;
+  top: 25px;
+  left: 0px;
+  z-index: 1;
+  display: none;
+}
+
+/*Story*/
+#storyNextButton {
+  top: 580px;
+  left: 330px;
+  display: none;
+}
+
+#playAudioButton,
+#englishButton,
+#matchIgnorantButton,
+#matchArrogantButton {
+  top: 700px;
+  z-index: 2;
+  display: none;
+}
+
+#playAsMuteModeButton,
+#japaneseButton,
+#matchUnjustButton {
+  top: 760px;
+  z-index: 2;
+  display: none;
+}
+
+#prologueNextButton {
+  top: 820px;
+  z-index: 2;
+  display: none;
+}
+
+#homeButton {
+  top: 860px;
+  left: 260px;
+  z-index: 2;
+  display: none;
+}
+
+#spacer {
+  font-size: 80px;
+}
+
+.sentencLine {
+  font-size: 24px;
+  text-align: center;
+}
+
+/*battleBoard*/
+#boardArrogant {
+  position: absolute;
+  background-image: url(../Arrogant/Universe.png);
+  background-position: center center;
+  background-size: cover;
+}
+
+#boardIgnorant {
+  position: absolute;
+  background-image: url(../Ignorant/StarlitSky.png);
+  top: 50px;
+}
+
+#boardUnjust {
+  position: absolute;
+  background-image: url(../Unjust/LavaCave.jpg);
+}
+
+/*characterImg*/
+#ArrogantImg,
+#IgnorantImg,
+#UnjustImg {
+  position: absolute;
+  bottom: -3px;
+}
+
+/*myLife,comLife,totalCount*/
+#myLifeArrogant,
+#myLifeIgnorant,
+#myLifeUnjust,
+#comLifeArrogant,
+#comLifeIgnorant,
+#comLifeUnjust,
+#totalCountArrogant,
+#totalCountIgnorant,
+#totalCountUnjust {
+  background-image: url(blueTurn.png);
+  position: absolute;
+  text-align: center;
+  font-size: 32px;
+  height: 45px;
+  width: 120px;
+  bottom: 5px;
+  right: 85px;
+  z-index: 1;
+}
+
+/*holder*/
+#holderArrogant,
+#holderIgnorant,
+#holderUnjust {
+  position: relative;
+  color: #888888ff;
+  height: 280px;
+  top: -30px;
+}
+
+/*pressStart*/
+#pressStartArrogant,
+#pressStartIgnorant,
+#pressStartUnjust {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+}
+
+/*startDiv*/
+#startDivArrogant,
+#startDivIgnorant,
+#startDivUnjust {
+  position: absolute;
+  top: 100px;
+  z-index: 2;
+}
+
+/*startButton*/
+#startButtonArrogant,
+#startButtonIgnorant,
+#startButtonUnjust,
+#battleNextButton {
+  position: absolute;
+  font-size: 24px;
+  top: 120px;
+  left: -20px;
+  height: 40px;
+  width: 96px;
+}
+
+/*resetButton*/
+#resetButtonArrogant,
+#resetButtonIgnorant,
+#resetButtonUnjust {
+  position: absolute;
+  font-size: 24px;
+  top: 220px;
+  left: -19px;
+  height: 40px;
+  width: 96px;
+  z-index: 1;
+}
+
+/*resetDialgue*/
+#ResetDialogDiv {
+  position: absolute;
+  background: #88888888;
+  border: 1px solid #888888ff;
+  font-size: 24px;
+  height: 340px;
+  width: 300px;
+  top: 380px;
+  left: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 12px;
+  z-index: 2;
+  display: none;
+}
+
+#resumeBattleButton,
+#resetBattleButton,
+#loseButton,
+#returnTitleButton {
+  position: relative;
+  font-size: 24px;
+  left: 0px;
+}
+
+/*resultDiv*/
+#resultDivArrogant {
+  background-image: url(gray.png);
+  position: absolute;
+  font-size: 90px;
+  top: 128px;
+  left: 5px;
+  z-index: 2;
+  visibility: hidden;
+}
+
+#resultDivIgnorant {
+  background-image: url(gray.png);
+  position: absolute;
+  font-size: 90px;
+  top: -32px;
+  left: 5px;
+  z-index: 2;
+}
+
+#resultDivUnjust {
+  background-image: url(gray.png);
+  position: absolute;
+  font-size: 90px;
+  top: 238px;
+  left: 76px;
+  z-index: 2;
+}
+
+/*DamageScreen*/
+
+#damageScreenIgnorant.numberMissed,
+#damageScreenUnjust.numberMissed,
+#damageScreenArrogant.numberMissed {
+  animation: miss 0.3s;
+}
+
+@keyframes miss {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/*Ignorant*/
+.myNumberCards {
+  z-index: 1;
+}
+
+#damageScreenIgnorant {
+  position: absolute;
+  background-color: #e0e0e0;
+  height: 560px;
+  width: 730px;
+  opacity: 0;
+  z-index: 0;
+}
+
+#damageScreenUnjust,
+#damageScreenArrogant {
+  position: absolute;
+  background-color: #e0e0e0;
+  height: 1100px;
+  width: 730px;
+  opacity: 0;
+  z-index: 0;
+}
+
+/*Unjust*/
+#openButton {
+  font-size: 24px;
+  height: 40px;
+  width: 96px;
+  top: 150px;
+  left: 0px;
+  z-index: 1;
+}
+
+/*Arrogant*/
+.adjusterButton,
+.answerWait {
+  position: relative;
+  font-size: 18px;
+  height: 28px;
+  width: 70px;
+  left: 0px;
+  z-index: 1;
+}
+
+#idCorrectIncorrect {
+  background-image: url(gray.png);
+  position: absolute;
+  top: -110px;
+  left: 29px;
+  color: #ffffffff;
+  font-size: 90px;
+  z-index: 2;
+  visibility: hidden;
+}
+
+#answerWaitDiv {
+  display: none;
+}
